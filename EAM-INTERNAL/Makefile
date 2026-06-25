@@ -5,6 +5,7 @@ SRCS =	parameters.f90 module_bh_mod.f90 module_function_par.f90  module_histo.f9
         drive_bh.f90 gauss.f90 ranmar_bh.f  initial_configuration.f90 \
 	minimization_rgl.f90 l-bfgs-b.f90 \
 	comparison.f90 bigvoi.f90 force_rgl.f90\
+	lammps.f90 \
 	struttura.f90 cna.f90 permutazioni.f90 calcola_histo.f90 \
 	output_bh_glo.f90 output_bh_lista.f90 \
 	move_ball.f90 move_single.f90 move_shake.f90 move_bonds.f90 \
@@ -20,6 +21,7 @@ OBJS =	parameters.o module_bh_mod.o module_function_par.o module_histo.o\
         drive_bh.o gauss.o ranmar_bh.o initial_configuration.o \
 	minimization_rgl.o l-bfgs-b.o \
 	comparison.o bigvoi.o force_rgl.o\
+	lammps.o \
 	struttura.o cna.o permutazioni.o calcola_histo.o \
 	output_bh_glo.o output_bh_lista.o \
 	move_ball.o move_single.o move_shake.o move_bonds.o \
@@ -31,7 +33,7 @@ OBJS =	parameters.o module_bh_mod.o module_function_par.o module_histo.o\
 
 #        buffer.o
 
-#LIBS = 
+LIBS = -llammps
 
 #FC=pgf90
 #FC=gfortran
@@ -41,12 +43,13 @@ OBJS =	parameters.o module_bh_mod.o module_function_par.o module_histo.o\
 #FC=ifort
 #FC= pgf90
 FC=gfortran -O3
-FFLAGS= -std=legacy
+#FFLAGS= -std=legacy
 F90=gfortran -O3
 #F90=pgf90
 #F90 =pgf90
 #F90= ifort  -O1
-F90FLAGS= -std=legacy
+F90FLAGS= -std=legacy -L/home/davidson/Public/lammps/build/
+#F90FLAGS= -L/home/dalimonti/Calcolo/lammps/build/
 #LDFLAGS = -Wl,-R/usr/lib/gcc-lib/i486-linux/3.3.5 
 
 all: $(PROG)
