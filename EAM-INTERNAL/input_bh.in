@@ -2,6 +2,8 @@
 unseeded			!unseedeed/seeded
 no 			!refresh random number generator (si/no) (if no it start with numbers 1234 5678)
 ******Interaction potentials
+lammps                  !choose calculator (lammps/rgl)
+"../potential.mod"      !where to find potential file (if lammps)
 si			!cut-off (si/no)
 AgCu_old.in		!input file for potential parametrization
 ******Run settings

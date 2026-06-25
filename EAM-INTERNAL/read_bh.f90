@@ -5,7 +5,7 @@ SUBROUTINE READ_BH
   USE HISTO
   USE FUNCTION_PAR, only : p,q,a,qsi,ecoh,rat,mass,cutoff,cutoff_start,cutoff_end,&
                            ddd,amgo,cutz,znmax,arete,dist,&
-                           a5,a4,a3,x5,x4,x3
+                           a5,a4,a3,x5,x4,x3, lammps_module, calculator
   IMPLICIT NONE
 
   !Local variables
@@ -87,6 +87,8 @@ SUBROUTINE READ_BH
   ENDIF
   read (19,*) refresh !refresh or not refresh the seed for random generators
   read(19,*)!******Interaction potentials
+  read(19,*) calculator! whether to use lammps
+  read(19,*) lammps_module ! location of lammps potential.mod location
   read (19,*) cutoff !cutoff or no cutoff for the metal-metal interaction
   read (19,*) param_file
 
@@ -324,6 +326,8 @@ SUBROUTINE READ_BH
   write (22,*) ' cutoff: ',cutoff
   write (*,*) ' parametrization: ',param_file
   write (22,*) ' parametrization: ',param_file
+  !write (*,*)  "Calculator :", calculator
+  !write (22,*) "Calculator :", calculator
   write (*,*)'##############################################################################'
   write (*,*)'MC STEPS'
   write (*,*)'##############################################################################'
