@@ -35,11 +35,10 @@ IMPORTANT REMARK: it is strongly suggested to run the unbiased search on the who
         - 3.5.1: specify the correct couple of metals by replacing `Xx` and `Yy`;\
         - 3.5.2: pay attention to tuning the dimension of the box (lines 17-19) where the random starting structure is created. The following values are suggested: for a cluster of 200 atoms choose (-6 to +6); for a cluster of 800 atoms choose (-10 to +10);\
         - 3.5.3: compile the `parallel_unseeded` and `read` using the following command: 
-```bash
-gfortran -o parallel_unseeded.x parallel_unseeded.f90
-gfortran -o read.x read.f90
-```
-
+        ```bash
+        gfortran -o parallel_unseeded.x parallel_unseeded.f90
+        gfortran -o read.x read.f90
+        ```
         - 3.5.5: make the scripts `analize`, `clean` and `crea` executable;\
         - 3.6: exit from the folder going back to the root directory.
 
