@@ -52,5 +52,7 @@ Real*8 :: e_met_mgo
 Logical :: is_nan
 
 Character(2) :: cutoff
+Character(20) :: lammps_module ! where to find lammps .mod file
+Character(20) :: calculator ! what to use to calculate energies
 
 END MODULE FUNCTION_PAR
