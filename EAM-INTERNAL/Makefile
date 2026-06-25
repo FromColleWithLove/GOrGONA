@@ -48,8 +48,7 @@ F90=gfortran -O3
 #F90=pgf90
 #F90 =pgf90
 #F90= ifort  -O1
-F90FLAGS= -std=legacy -L/home/davidson/Public/lammps/build/
-#F90FLAGS= -L/home/dalimonti/Calcolo/lammps/build/
+F90FLAGS= -std=legacy -L$(LIB_DIR)
 #LDFLAGS = -Wl,-R/usr/lib/gcc-lib/i486-linux/3.3.5 
 
 all: $(PROG)
