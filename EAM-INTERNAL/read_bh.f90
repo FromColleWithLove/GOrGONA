@@ -326,8 +326,10 @@ SUBROUTINE READ_BH
   write (22,*) ' cutoff: ',cutoff
   write (*,*) ' parametrization: ',param_file
   write (22,*) ' parametrization: ',param_file
-  !write (*,*)  "Calculator :", calculator
-  !write (22,*) "Calculator :", calculator
+  write (*,*)  "Calculator :", calculator
+  write (22,*) "Calculator :", calculator
+  write (*,*)  "LAMMPS input file :", lammps_module
+  write (22,*) "LAMMPS input file :", lammps_module
   write (*,*)'##############################################################################'
   write (*,*)'MC STEPS'
   write (*,*)'##############################################################################'
